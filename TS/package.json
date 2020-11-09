@@ -1,0 +1,12 @@
+{
+  "name": "ts",
+  "version": "1.0.0",
+  "description": "lavie ts_test",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc", 
+    "build:w": "tsc -w" 
+  },
+  "author": "lavie",
+  "license": "ISC"
+}
