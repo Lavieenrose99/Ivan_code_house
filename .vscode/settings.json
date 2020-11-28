@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "*.cjson": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript",
+        "__config": "c",
+        "__cxx_version": "c",
+        "__locale": "c",
+        "cstdlib": "c",
+        "memory_resource": "c",
+        "locale": "c",
+        "ostream": "c",
+        "system_error": "c",
+        "typeinfo": "c"
+    }
+}
