@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-09 16:48:10
- * @LastEditTime: 2020-12-10 14:51:15
+ * @LastEditTime: 2020-12-13 23:10:13
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/JS/prop.js
@@ -9,9 +9,11 @@
 function Person(name, age){ 
     this.name = name;
     this.age = age;
+    function Aka(a){
+        this.a = a
+    }
  }
- const Obj = {};
- 
+const Obj = {}
  Person.prototype.motherland = 'china'
  Person.prototype.console = ()=>{
      return console.log("nnl");
@@ -33,7 +35,7 @@ function Person(name, age){
  console.log(person1.__proto__.__proto__.constructor)
  console.log(person1.__proto__.__proto__.__proto__)
  console.log(Obj.constructor)
- console.log(person1)
+ console.log(person1,111)
  person1.console()
  person1.create(111,222)
  console.log(person1.child)
