@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-03 23:53:51
- * @LastEditTime: 2020-12-07 13:28:45
+ * @LastEditTime: 2020-12-14 17:25:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/JS/Object.js
@@ -53,3 +53,22 @@ objArray.forEach((item,index,arr)=>{
 console.log(array.reduce((pre,aft)=>{
      return pre + aft
 }))
+Object.defineProperty(Obj1,'kick',{
+    writable: true,
+    value: 'gun'
+})
+Obj1.kick = 'gun1'
+console.log(Obj1.kick)
+
+Object.defineProperty(Obj1,'dick',{
+    get: function(){
+        console.log(this.kick)
+        return this.kick
+    },
+    set: ()=>{
+        console.log('fuck')
+    }
+})
+Obj1.dick = '11'
+console.log(Obj1.dick,111)
+
