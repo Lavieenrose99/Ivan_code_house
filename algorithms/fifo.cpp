@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2020-12-25 01:14:20
- * @LastEditTime: 2020-12-25 17:35:08
- * @LastEditors: your name
+ * @LastEditTime: 2020-12-27 17:16:10
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/algorithms/fifo.cpp
  */
@@ -62,3 +62,4 @@ int main(){
     cout << "缺页率: "<< diseffect*1.0 / total_instruction * 100 <<"%"<<endl;
     
 }
+

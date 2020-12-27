@@ -1,14 +1,4 @@
-.float1{
-    float: left;
-    height: 200px;
-    width: 200px;
-    background-color: red;
-}
-.clear{
-    clear: both;
-}
-.float2{
-    height: 100px;
-    width: 100px;
-    background-color: aqua;
+.article:nth-of-type(0){
+    width: auto;
+    background: aqua;
 }
