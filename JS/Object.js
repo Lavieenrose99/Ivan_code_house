@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-03 23:53:51
- * @LastEditTime: 2020-12-14 17:25:35
+ * @LastEditTime: 2020-12-25 01:36:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/JS/Object.js
@@ -71,4 +71,7 @@ Object.defineProperty(Obj1,'dick',{
 })
 Obj1.dick = '11'
 console.log(Obj1.dick,111)
+let kk = new Boolean(false)
+let dd = Boolean(false)
+console.log(kk,dd)
 

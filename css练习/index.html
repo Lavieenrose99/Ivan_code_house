@@ -1,23 +1,33 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-04 23:33:50
- * @LastEditTime: 2020-12-05 01:42:03
+ * @LastEditTime: 2020-12-25 01:43:11
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/css练习/index.html
 -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Document</title>
-</head>
+<html>
 <body>
-    <div class="float1"></div>
-    <p>sdadadadada</p>
-    <div class="clear" ></div>
-    <div class="float2"></div>
+ <div id="ele" class="div">sds
+ <span id="s1" class="sp" lang="zh-cn">
+ </span>
+ </div>
 </body>
+<script type="text/javascript">  
+ function exct() {
+    var oEle = document.getElementById("ele");
+    var child = oEle.children;
+    console.log(child.childNodes,oEle.childNodes)
+    console.log("ele.children的执行结果是:");
+    for(i = 0; i < child.length; i++){
+       console.log(child[i].tagName);
+    }  
+    child = oEle.childNodes;
+    console.log("ele.childNodes的执行结果是:");
+    for(i = 0; i < child.length; i++){
+       console.log(child[i].tagName);
+    }
+ }  
+ exct (); 
+</script>
 </html>
