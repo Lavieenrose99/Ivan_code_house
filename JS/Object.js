@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-03 23:53:51
- * @LastEditTime: 2020-12-25 01:36:54
+ * @LastEditTime: 2021-01-12 00:51:41
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/JS/Object.js
@@ -75,3 +75,32 @@ let kk = new Boolean(false)
 let dd = Boolean(false)
 console.log(kk,dd)
 
+const obj1 = {
+    ivan: 'hello',
+    liwei: 'hi'
+}
+var number = 2
+console.log(obj1.ivan,obj1['ivan'])
+const testobj = {
+    number: 1,
+    getnormalfunc: function(){
+        console.log(this.number,'nor') 
+    },
+    getarrowfunc: ()=>{
+        console.log(this.number,'arr')
+    }
+}
+testobj.getarrowfunc()
+testobj.getnormalfunc()
+const objkk = {
+    number: 666,
+    a: function() {
+        console.log(this)
+        setTimeout(() => { 
+            console.log(this) 
+        }, 0)
+    }
+}
+objkk.a()
+let setnumber = new Number(77)
+console.log(setnumber.valueOf())
