@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-11-17 09:59:28
- * @LastEditTime: 2020-11-17 14:09:13
+ * @LastEditTime: 2021-01-13 01:46:28
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /JS&TS练习代码/JS/Promise.js
@@ -30,4 +30,40 @@ myFirstPromise.then(function(successMessage){
 ).then((myFirstPromise)=>{
     console.log(myFirstPromise)
 });
-//console.log(myFirstPromise);
+console.log(myFirstPromise);
+
+// const firascs = function (url){
+//     return new Promise(function(resolve,reject){
+//         var imgs = new Image()
+//         imgs.onload = function(){
+//             resolve(imgs)
+//         }
+//         imgs.onerror = function(){
+//             reject(new Error('sorry'))
+//         }
+//         imgs.src = url
+//     })
+// }
+// const urlss= 'http://qiniu.daosuan.net/icon-1606046338000'
+// firascs(urlss).then(function(t){
+//     console.log('hello')
+// },function(e){
+//     console.log(e)
+// })
+
+
+const p1 = new Promise(function(resolve,reject){
+    setTimeout(()=>reject(new Error('sorrycc')),1000)
+})
+const p2 = new Promise((resolve,reject)=>{
+    setTimeout(()=>resolve(p1),1000)
+})
+p2.then(function(a){
+    console.log('success',a)
+},function(b){
+    console.log('error',b)
+}).catch((e)=>{
+    console.log(e)
+})
+
+

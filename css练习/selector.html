@@ -1,0 +1,67 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-01-13 20:01:00
+ * @LastEditTime: 2021-01-13 22:05:02
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/css练习/selector.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+    /*
+    属性选择器
+    首部匹配
+    *只要字符包含就匹配
+    */
+    [id^=sub]{
+        background-color: aqua;
+    }
+    /* 尾部匹配 */
+    [id$=\-2]{
+         background-color: blueviolet;
+    }
+    div::before{
+        content: '*'; 
+    }
+    div::first-line{
+        color: red;
+    }
+   
+    body *:not(h1){
+        background-color: rgb(17, 93, 160);
+    }
+    :root{
+        background-color: brown;
+    }
+    :target{
+        background-color: darkblue;
+    }
+    #p1{
+        height: 10px;
+    }
+    :empty{
+        background-color: black;
+    }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <a href="#sub-1">click</a>
+    <br />
+    <a href="#sub-2">click</a>
+    <div id="sub-1">he1</div>
+    <div id="sub-2">he1</div>
+    <div id="sub-1">he1</div>
+    <div id="sus-2">he1</div>
+    <div id="sus-2">he1</div>
+    <div id="sus-2">he1</div>
+    <h1>selector</h1>
+    <p>sdsadad</p>
+    <p>sdsdsdsd</p>
+    <p id="p1"></p>
+</body>
+</html>
