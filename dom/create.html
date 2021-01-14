@@ -1,0 +1,60 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-01-14 21:49:20
+ * @LastEditTime: 2021-01-14 22:22:21
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/dom/create.html
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+      [id$=\-1]{
+             background-color: aqua;
+      }
+      li::after{
+          content: '**&';
+      }
+  </style>
+  <script>
+      function change(color){
+        var node1 = document.getElementById('xx1')
+        node1.style.color = color
+        let ele = document.createElement('div')
+        ele.style.color = "red"
+        ele.innerHTML = '我是节点'
+        document.body.appendChild(ele)
+        var cloneItem = xx1.cloneNode(true)
+        var cloneItemSingle = xx1.cloneNode(false)
+        cloneItemSingle.id = "xx2"
+        console.log(cloneItem,cloneItemSingle)
+        document.body.appendChild(cloneItem)
+        document.body.appendChild(cloneItemSingle)
+        var textContent = document.createTextNode('nnl')
+        console.log(textContent)
+        document.body.appendChild(textContent)
+        let list = document.createElement('ul')
+        var fac = document.createDocumentFragment();
+        for(let i = 0 ;i < 100;i++){
+               li = document.createElement('li')
+               li.innerHTML = `第${i}个节点`
+               li.id = `${i}-1`
+               fac.appendChild(li)
+        }
+        list.appendChild(fac)
+        document.body.appendChild(list)
+}
+  </script>
+</head>
+<body>
+  <div id="xx1" onclick="change('blue')">1233
+  <p>我是弟弟
+    <p>我是儿子</p>
+    </p>
+  </div>
+</body>
+</html>
