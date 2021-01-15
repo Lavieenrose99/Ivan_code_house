@@ -40,6 +40,3 @@ console.log(a instanceof father && a instanceof child)
   
 //   console.log(member.getFullName());
 
-  let asda = 'sdasdjjsdjasadasda'
-  const asdas = asda.split('d')
-console.log(asdas[1])

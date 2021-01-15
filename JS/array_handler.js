@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-13 22:23:08
- * @LastEditTime: 2021-01-14 01:26:35
+ * @LastEditTime: 2021-01-15 16:46:50
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/JS/array_handler.js
@@ -60,23 +60,28 @@ const obj2 = {
 
 obj1.doo.call(obj2)
 
-var findMedianSortedArrays = function(nums1, nums2) {
-    var num
-    function sortNumber(a,b)
-  {
-        return a - b
-    }
-    const arr = nums1.concat(nums2).sort(sortNumber)
-    
-    if(arr.length % 2 === 0){
-      num = (arr[arr.length / 2 - 1 ] + arr[arr.length / 2 ]) / 2
-      return num
-    }else {
-        console.log(arr)
-        console.log('yep',Math.floor(arr.length / 2))
-        num = arr[Math.floor(arr.length / 2)]
-        return num
-    }
-};
+//var unm = 9
+function out (){
+    console.log(unm)
+   var unm = 9
+}
+out()
+//同样存在暂时性死区问题
+function check(a,b=a){
+    console.log(`${a}is${b}`)
+}
+function checkerr(a=b,b){
+    console.log(`${a}is${b}`)
+}
+check(2,undefined)
+//checkerr(undefined,2)
 
-console.log(findMedianSortedArrays([3],[-2,-1]))
+
+function bar(){
+    let num = 1
+    return function fn(){
+        console.log(num,'666')
+    }()//表示立刻执行和在调用时写两个()()一样
+}
+
+console.log(bar())
