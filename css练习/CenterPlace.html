@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-01-19 15:13:29
- * @LastEditTime: 2021-01-19 23:12:32
+ * @LastEditTime: 2021-01-19 23:48:41
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/css练习/CenterPlace.html
@@ -14,21 +14,29 @@
     <title>Document</title>
     <style>
         .father{
-            /* display: table; */
+            display: grid;
             border: 10px solid red;
             height: 300px;
             width: 300px;
-            text-align: center;
-            vertical-align: middle;
+            
+            
         }
         .child{
-           
+            justify-self: center;
+            align-self: center
         }
     </style>
 </head>
 <body>
-    <table class="father">
-    <td class='child'>hello css</td>
-    </table>
+    <div class="father">
+    <div class='child'>hello css</div>
+    </div>
+    <!-- <table  class="father">
+        <tr>
+            <td class='child'>
+                hello css
+            </td>
+        </tr>
+    </table> -->
 </body>
 </html>
