@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-09 00:44:36
- * @LastEditTime: 2020-12-19 14:53:52
+ * @LastEditTime: 2021-01-21 14:08:08
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/JS/Reg.js
@@ -15,3 +15,6 @@ console.log(str.replace(Reg1,'fuck'))//regex+pattern
 console.log(str.match(Reg1))//regex
 console.log(Reg1)
 console.log(str2.replace(Reg2,'fuck'))
+for( var i = 0; i < 10;i++){
+    console.log(i)
+}
