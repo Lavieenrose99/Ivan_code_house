@@ -1,0 +1,47 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-01-23 10:28:20
+ * @LastEditTime: 2021-01-23 13:00:33
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/css练习/debounce.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input id="input"  ></input>
+        <div id="text">0</div>
+      </div>
+      <script>
+        // 思考防抖
+    const debounce = function (fn, delay = 1000) {
+         let time = null
+        return function (...args) {
+            console.log([...arguments])
+            console.log(args)
+        let that = this
+          time && clearTimeout(time)
+         time = setTimeout(function () {
+          fn.apply(that,args)
+        }, delay)
+          }
+  }
+       const input  = document.getElementById('input')
+       const text = document.getElementById('text')
+       input.oninput = debounce((e)=>{
+           console.log(e.target.value,111)
+                 text.innerHTML = e.target.value
+       },1000)
+
+
+    </script>
+      
+</body>
+</html>

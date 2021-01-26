@@ -1,0 +1,54 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-01-23 14:31:56
+ * @LastEditTime: 2021-01-23 14:44:27
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/css练习/move.html
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    window.onload = () => {
+      var element = document.getElementById('t');
+
+      function step() {
+          const timestamp = [...arguments].slice(0,1)
+        console.log(arguments)
+        var progress = timestamp;
+        // element.style.left = (progress / 30) * (10 - progress / 1000) + 'px';
+        element.style.left = Math.pow(progress / 5, .6) * 40 + 'px';
+        if (progress < 5000) {
+          window.requestAnimationFrame(step);
+        } else {
+          window.cancelAnimationFrame(step)
+        }
+      }
+
+      window.requestAnimationFrame(step);
+    }
+  </script>
+  <style>
+    .container {
+      position: relative;
+      width: 1000px;
+    }
+
+    #t {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="t"></div>
+  </div>
+</body>
+
+</html>

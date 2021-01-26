@@ -1,3 +1,3 @@
-arra.forEach((item,index,array)=>{
-//      item.kk = 3
-// })
+while(start++<count){
+//     console.log(start)
+// }

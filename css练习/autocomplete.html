@@ -1,0 +1,47 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-01-23 14:46:15
+ * @LastEditTime: 2021-01-23 14:46:15
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/css练习/autocomplete.html
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    window.onload = () => {
+
+      const input = document.getElementById('input')
+      const words = ['珠海', '广州', '上海', '杭州', '成都']
+      input.addEventListener("input", debounce(function (e) {
+        const value = e.target.value
+        const index = words.findIndex((item) => value && item.indexOf(value) !== -1)
+        if (index !== -1) {
+          e.target.value = words[index]
+        }
+      }, 500))
+
+      function debounce(fn, wait = 500) {
+        let timeout = null
+        return function () {
+          if (timeout) {
+            clearTimeout(timeout)
+          }
+          timeout = setTimeout(() => {
+            fn.apply(this, [...arguments])
+          }, wait)
+        }
+      }
+    }
+  </script>
+  <style>
+  </style>
+</head>
+
+<body>
+  <input id="input" />
+</body>
+
+</html>

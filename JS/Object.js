@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-03 23:53:51
- * @LastEditTime: 2021-01-12 00:51:41
+ * @LastEditTime: 2021-01-23 13:13:15
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/JS/Object.js
@@ -104,3 +104,10 @@ const objkk = {
 objkk.a()
 let setnumber = new Number(77)
 console.log(setnumber.valueOf())
+const Obj11 = { 
+    name: 'cjz',
+    age: 12
+}
+const Obj12 = Object.assign(Obj11,{name:11},{kk:99})
+console.log(Object.values(Obj11))
+console.log(Obj12)

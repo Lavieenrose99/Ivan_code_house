@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-27 21:20:01
- * @LastEditTime: 2020-12-27 23:59:17
+ * @LastEditTime: 2021-01-24 01:01:19
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/JS/test.js
@@ -33,3 +33,9 @@ const output = {
 
 }
 console.log(output)
+for(let i = 0;i < 2 -1; i++){
+    console.log(1)
+}
+let a = k = 3
+a++
+console.log(k,a)
