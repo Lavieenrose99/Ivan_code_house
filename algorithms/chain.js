@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-23 01:55:32
- * @LastEditTime: 2021-01-25 17:05:02
+ * @LastEditTime: 2021-01-27 21:59:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/algorithms/chain.js
@@ -62,4 +62,28 @@ var reverseBetween = function(head, m, n) {
 
  console.log(reverseList([1,2,3,4,5]))
 
-
+ var reverseKGroup = function(head, k) {
+  let count = 0;
+  for(let p = head;p!=null;p = p.next){
+      if(p==null&&count<k) return head
+      count++
+  }
+  let groups = Math.floor( count/k )
+  let p = newNode = new ListNode()
+  p.next = head
+  for(let i = 0;i<groups;i++){
+      let pre = null
+          cur = p.next
+          for(let j = 0;j<k;j++){
+              let next = cur.next
+              cur.next = pre
+              pre = cur
+              cur = next
+          }
+          let start = p.next  //理解每个对象在改变前都是一串不会变的地址
+          start.next = cur
+          p.next = pre
+          p = start
+  }
+     return newNode.next
+};
