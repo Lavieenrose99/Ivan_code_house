@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-25 17:05:45
- * @LastEditTime: 2021-01-27 16:31:12
+ * @LastEditTime: 2021-01-28 01:15:44
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/algorithms/test.js
@@ -48,3 +48,5 @@ let start = p //获得p地址
 p = pre //重新获得新地址 值和引用要区分啊
 start.next = cur
 console.log(start,p)
+
+console.log([Symbol.iterator])
