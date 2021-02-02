@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id = 'throttle' >点击测试</button>
+  <div id = "show">0</div>
+  <script>
+    function throttle(fn,ms){
+      let canRender = true
+       return function(){
+         if(!canRender){
+           return;
+         }
+         canRender = false
+         setTimeout(()=>{
+           fn.apply(this,arguments)
+           canRender = true
+           
+         },ms)
+       }
+    }
+    var input = document.querySelector("#throttle")
+    var str = document.getElementById('show')
+    var count = 0
+    input.onclick = throttle(()=>{
+       count++
+       str.innerHTML = count
+    },500)
+  </script>
+</body>
+</html>

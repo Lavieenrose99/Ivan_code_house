@@ -1,0 +1,42 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-02 21:31:20
+ * @LastEditTime: 2021-02-02 21:57:10
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/css练习/debounce_practice.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+    <input id="contentinput"></input>
+    <div id="show_counter">0</div>
+    <script>
+        function debounce(fn,ms,...a){
+            
+              var time = null
+              console.log(a)
+              return function(...args){
+                  console.log(args)
+                   let that = this
+                   time &&  clearTimeout(time)
+                   time = setTimeout(function(){
+                       fn.apply(that,args)
+                   },ms)
+              }
+        }//其实就是一个科里化函数
+        var input  = document.getElementById('contentinput')
+        var text = document.getElementById('show_counter')
+        input.oninput = debounce((e)=>{
+            text.innerHTML = e.target.value
+  
+        },1000)
+  
+      </script>
+</body>
+</html>
