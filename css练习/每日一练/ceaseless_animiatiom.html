@@ -1,0 +1,66 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-08 00:42:41
+ * @LastEditTime: 2021-02-08 01:07:54
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/css练习/每日一练/ceaseless_animiatiom.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js动画</title>
+    <style>
+      #app {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border:  1px red dashed;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      const end = 300,
+        duration = 5;
+      const $app = document.getElementById("app");
+      let starttime;
+      function move() {
+            console.log(((Date.now() - starttime) / 1000) % 5) //% 5意味着到了5s后归零
+        let percent = (((Date.now() - starttime) / 1000) % duration) / 10
+        $app.style.left = percent * end + "px";
+      }
+      function start() {
+        starttime = Date.now()
+        
+        let timer = setInterval(() => {
+          move()
+        }, 1000/60);
+      }
+      start()
+
+      // 方法二
+      // function start() {
+      //   let timer = setTimeout(() => {
+      //     move()
+      //     start()
+      //   }, 1000/60);
+      // }
+      // starttime = Date.now()
+      // start()
+
+      // 方法三
+    //   function start() {
+    //     requestAnimationFrame(() => {
+    //       move();
+    //       start();
+    //     });
+    //   }
+      starttime = Date.now();
+      start();
+    </script>
+  </body>
+</html>
