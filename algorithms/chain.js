@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-23 01:55:32
- * @LastEditTime: 2021-01-27 21:59:40
+ * @LastEditTime: 2021-02-08 23:22:59
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/algorithms/chain.js
@@ -86,4 +86,41 @@ var reverseBetween = function(head, m, n) {
           p = start
   }
      return newNode.next
+};
+
+//寻找环的起点
+
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var detectCycle = function(head) {
+  let mark = new ListNode()  
+  mark.next = head
+  let fast  = slow = mark
+
+  if(fast.next == null || fast.next.next == null)
+  return null
+  while(fast && fast.next){
+      fast =  fast.next.next
+      slow = slow.next
+      if(fast === slow){
+          let p = mark
+          while(p !== slow){
+              slow = slow.next
+              p = p.next
+          }
+          return p
+      }
+      
+  }return null
 };
