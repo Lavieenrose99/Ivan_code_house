@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-27 21:20:01
- * @LastEditTime: 2021-02-05 01:46:40
+ * @LastEditTime: 2021-02-10 01:52:03
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/JS/test.js
@@ -53,3 +53,13 @@
   greet.call(obj,(y = 1)=>{
       console.log(111,y)
   });  // cats typically sleep between 12 and 16 hours
+
+  const test = {
+      id: 1922,
+      name: 'cjz',
+      job: 'programmer'
+  }
+  for(let key in test){
+      console.log(key)
+      console.log(test[key])
+  }
