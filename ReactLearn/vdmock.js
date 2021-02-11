@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-09 16:58:09
- * @LastEditTime: 2021-02-10 16:31:11
+ * @LastEditTime: 2021-02-12 01:48:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/ReactLearn/vdmock.js
@@ -87,16 +87,17 @@ const getDiff = (oldNode,newNode,index,difference)=>{
         } //如果节点类型相同则则继续比较属性是否相同
     }else if(oldNode.tagName === newNode.tagName){
         let storeAttrs = {}
-        for(let  key in oldNode){
-            if(oldNode[key] !== newNode[key]){
-                storeAttrs[key] = newNode[key]
+        for(let  key in oldNode.attrs){ 
+            if(oldNode.attrs[key] !== newNode.attrs[key]){
+               
+                storeAttrs[key] = newNode.attrs[key]
             }
         }
-        for (let key in newNode){
-            if(!oldNode.hasOwnProperty(key)){
+        for (let key in newNode.attrs){
+            if(!oldNode.attrs.hasOwnProperty(key)){
                 storeAttrs[key] = newNode[key]
             }
-        }
+        }     
         if(Object.keys(storeAttrs).length>0){
             diffResult.push({
                 index,
@@ -105,31 +106,30 @@ const getDiff = (oldNode,newNode,index,difference)=>{
             })
         } //遍历子节点
         oldNode.child.forEach((child,index)=>{
-            console.log(child,111)
              getDiff(child,newNode.child[index],++initIndex,difference)
         }) //如果类型不相同，那么无需对比直接替换掉就行
-      
-    }else{
+     
+    }else if(oldNode.tagName !== newNode.tagName){
         diffResult.push({
             type: TAKEPLACE,
-            newNode
-        })
-    }if( //如果不存在旧节点那么同样也是直接替换就行
-        !oldNode
-    ){ 
-        diffResult.push({
-            type: TAKEPLACE,
+            index,
             newNode
         })
     } //最后将结果返回
+    if(!oldNode){
+        diffResult.push({
+            type: TAKEPLACE,
+            newNode
+        })
+    }
     if(diffResult.length){
         difference[index] = diffResult
     }
 }
 
+
 const fixPlace = (node,difference)=>{
     let pacer = { index: 0 }
-    console.log(node)
     pace(node,pacer,difference)
 }
 /*
@@ -137,9 +137,11 @@ const fixPlace = (node,difference)=>{
 */
 
 const pace = (node,pacer,difference) =>{
+    
     let currentDifference = difference[pacer.index]
     let childNodes = node.childNodes
-    childNodes.forEach(function(child){
+    console.log(difference)
+    childNodes.forEach((child)=>{
         pacer.index ++
         pace(child,pacer,difference)
     })
@@ -152,7 +154,7 @@ const doFix = (node,difference) =>{
      difference.forEach(item=>{
          switch (item.type){
              case 'change_attrs':
-                 const attrs = item.value.attrs
+                 const attrs = item.value
                  for( let key in attrs ){
                      if(node.nodeType !== 1) 
                      return 
@@ -183,19 +185,17 @@ const doFix = (node,difference) =>{
 }
 
 const VdObj1 = newElement('ul',{id: 'list'},[
-    newElement('li',{class: 'list-1',style:'color:red' }, ['lavie']),
-    newElement('li',{class: 'list-2' }, ['virtual dom']),
-    newElement('li',{class: 'list-3' }, ['React']),  
-    newElement('li',{class: 'list-4' }, ['Vue']) ,
+    newElement('li',{class: 'list',style:'color:red' }, ['lavie']),
+    newElement('li',{class: 'list' }, ['virtual dom']),
+    newElement('li',{class: 'list' }, ['React']),  
+    newElement('li',{class: 'list' }, ['Vue']) 
 ])
-const VdObj = newElement('ol',{id: 'list'},[
-    newElement('h2',{class: 'list-1',style:'color:green' }, ['lavieee']),
-    newElement('li',{class: 'list-2' }, ['virtual dom']),
-    newElement('li',{class: 'list-3' }, ['React']), 
-    newElement('li',{class: 'list-4' }, ['Vue']) ,
-    newElement('li',{class: 'list-5' }, ['Dva']) ,
-    newElement('li',{class: 'list-5' }, ['Dva']) 
- 
+const VdObj = newElement('ul',{id: 'list'},[
+    newElement('li',{class: 'list',style:'color:red' }, ['lavie']),
+    newElement('li',{class: 'list' }, ['virtual dom']),
+    newElement('li',{class: 'list' }, ['React']),  
+    newElement('li',{class: 'list-1' }, ['Vue'])
+
 ])
 const RealDom = VdObj1.render()
 const renderDom = function(element,target){
@@ -204,5 +204,6 @@ const renderDom = function(element,target){
 export default function start(){
    renderDom(RealDom,document.body)
    const diffs = diff(VdObj1,VdObj)
+   console.log(diffs)
    fixPlace(RealDom,diffs)
 }

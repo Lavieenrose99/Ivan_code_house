@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-09 22:33:39
- * @LastEditTime: 2021-02-10 16:22:23
+ * @LastEditTime: 2021-02-12 01:07:07
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/ReactLearn/diff.js
@@ -29,7 +29,8 @@ const getDiff = (oldNode,newNode,index,difference)=>{
             index,
             type: REMOVE
         }) //如果是文本节点直接替换就行
-    }else if(typeof newNode === 'string' && typeof oldNode === 'string'){
+    }
+    else if(typeof newNode === 'string' && typeof oldNode === 'string'){
         if(oldNode !== newNode){
             diffResult.push({
                 index,
@@ -60,20 +61,19 @@ const getDiff = (oldNode,newNode,index,difference)=>{
             console.log(child,111)
              getDiff(child,newNode.child[index],++initIndex,difference)
         }) //如果类型不相同，那么无需对比直接替换掉就行
-      
-    }else{
+    }else if(oldNode.tagName !== newNode.tagName){
         diffResult.push({
             type: TAKEPLACE,
             newNode
         })
-    }if( //如果不存在旧节点那么同样也是直接替换就行
+    } if(
         !oldNode
-    ){ 
+    ){
         diffResult.push({
             type: TAKEPLACE,
             newNode
         })
-    } //最后将结果返回
+    }
     if(diffResult.length){
         difference[index] = diffResult
     }
