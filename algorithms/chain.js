@@ -1,13 +1,13 @@
 /*
  * @Author: your name
  * @Date: 2021-01-23 01:55:32
- * @LastEditTime: 2021-02-08 23:22:59
+ * @LastEditTime: 2021-02-13 22:28:33
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/algorithms/chain.js
  */
 
- 主要是要指定next
+ //主要是要指定next
 var reverseList = function(head) {
       let prev = null;
       let curr = head;
@@ -124,3 +124,37 @@ var detectCycle = function(head) {
       
   }return null
 };
+
+//合并两个有序列表
+
+const getChain = (l1,l2)=>{
+  
+    function merge(l1,l2){  
+        
+        if(l1 == null) return l2
+        if(l2 == null) return l1
+        if(l1.val>l2.val){
+            l2.next = merge(l1,l2.next)
+            return l2 //关键
+        }else{
+            l1.next = merge(l1.next,l2)
+            return l1
+        }
+    }
+    return merge(l1,l2)
+}
+//合并k个升序链表
+//要注意 链表绝对不是简单的数组，本质是一个对象c.next.next.next，
+//本题使用的方法只是用数组方法将它的每个节点提取出来之后存储先在处理
+
+var mergeKLists = function(lists){
+    let ans  = lists.reduce((cur,val)=>{
+         while(val){
+           cur.push(val)
+           val = val.next     
+         }
+         return cur
+     },[]).sort((data1,data2)=>data1.val - data2.val).reduceRight((p,cur)=>(cur.next = p, p = cur,p),null)
+     return ans
+ }
+ 

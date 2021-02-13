@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-09 16:58:09
- * @LastEditTime: 2021-02-12 01:48:54
+ * @LastEditTime: 2021-02-12 01:51:34
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/ReactLearn/vdmock.js
@@ -97,7 +97,9 @@ const getDiff = (oldNode,newNode,index,difference)=>{
             if(!oldNode.attrs.hasOwnProperty(key)){
                 storeAttrs[key] = newNode[key]
             }
-        }     
+        }   
+        
+        //判断是否有不同
         if(Object.keys(storeAttrs).length>0){
             diffResult.push({
                 index,
@@ -106,9 +108,10 @@ const getDiff = (oldNode,newNode,index,difference)=>{
             })
         } //遍历子节点
         oldNode.child.forEach((child,index)=>{
+            //深度遍历所以要保留index
              getDiff(child,newNode.child[index],++initIndex,difference)
-        }) //如果类型不相同，那么无需对比直接替换掉就行
-     
+        }) 
+        //如果类型不相同，那么无需对比直接替换掉就行
     }else if(oldNode.tagName !== newNode.tagName){
         diffResult.push({
             type: TAKEPLACE,
