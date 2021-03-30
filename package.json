@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +19,9 @@
   "homepage": "https://github.com/Lavieenrose99/js-ts-practice#readme",
   "dependencies": {
     "@types/jsdom": "^16.2.6",
-    "jsdom": "^16.4.0"
+    "http": "0.0.1-security",
+    "jsdom": "^16.4.0",
+    "lodash": "^4.17.21",
+    "normalizr": "^3.6.1"
   }
 }

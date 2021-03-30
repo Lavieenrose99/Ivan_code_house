@@ -1,0 +1,38 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-14 15:34:01
+ * @LastEditTime: 2021-03-14 15:49:22
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/css练习/每日一练/error.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <input type="text" id="demo">
+    <section id="show"></section>
+    <button id="btnsure">输入</button>
+    <script>
+        var btn = document.getElementById("btnsure")
+        btn.addEventListener("click",check)
+        function check(){
+            var str = document.querySelector("#demo").value
+            var show = document.getElementById("show")
+            show.innerHTML = ''
+            try{   
+              if(str === '') throw "空"
+              if(isNaN(str)) throw "非数字"
+              if(Number(str) > 10) throw "太大了"
+            }catch(err){ 
+                show.innerHTML = "输入: " + err
+            }finally{
+                str = ''
+            }
+        }
+    </script>
+</body>
+</html>

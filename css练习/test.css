@@ -1,0 +1,57 @@
+*{
+    /*全局声明*/
+      border: 0;
+      margin: 0;
+      padding: 0;
+    }
+    
+     a{text-decoration: none;}
+     div{
+           /*定义图层的样式*/
+          width: 720px;
+          height: 500px;
+         margin: 0 auto;
+        padding: 30px;
+           text-align: center;
+    /*定义内容居中显示*/}
+    
+     body{
+           /*定义主体样式*/
+         position: relative;/*位置属性为相对的*/
+     text-align: center;}
+    
+    h1{
+    /*定义h1的样式*/
+     background: inherit;/*定义背景属性取值为继承*/
+    border-bottom: 1px dashed #097;
+     color:#000099;
+    font: 17px Georgia, serif;
+     margin: 0 10px;
+     padding: 0 0 35px;
+     text-align: center;}
+    
+    .hoverbox {cursor: default;list-style:none;}/*去掉列表项前的符号*/
+    .hoverbox a{cursor: default;}
+    .hoverbox a.preview{display:none;}
+    .hoverbox a:hover .preview {
+                                       /*派生选择器声明*/
+                                       display: block;
+                                       /*以块方式显示*/
+                                       position: absolute;
+                                       /*以绝对方式显示,图可以层叠*/
+                                       top: -33px;
+                                       /*相对当前位置偏移量*/
+                                       left: -45px;
+                                       /*相对当前位置偏移量*/
+                                       z-index: 1;
+                                       /*表示在上层(原小图在底层)*/
+                                   }
+    
+    . hoverbox img {
+        /*定义图像样式*/
+        background: #fff;
+        border-color: #aaa #ccc #ddd #bbb;
+        border-style: solid;
+        border-width: 1px;
+        color: inherit;
+    }

@@ -1,0 +1,31 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-26 10:35:51
+ * @LastEditTime: 2021-03-26 10:41:02
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/Vue/start.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+           </div>
+    <script>
+   const vm = new Vue({
+     el: '#app',
+     data: {
+     message: 'Hello Vue!'
+   }
+})
+vm = null
+    </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-25 17:05:45
- * @LastEditTime: 2021-02-13 22:15:33
+ * @LastEditTime: 2021-03-22 00:29:21
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/algorithms/test.js
@@ -49,17 +49,34 @@
 // start.next = cur
 // console.log(start,p)
 
-console.log([Symbol.iterator])
+// console.log([Symbol.iterator])
 
-const test = (a,b)=>(a--,b--,a+b)//返回的是最后一个逗号后面那个
-console.log(test(3,4))
-//y
-var mergeKLists = function(lists) {
-    return lists.reduce((p, n) => {
-        while (n) {
-            console.log(n)
-            p.push(n), n = n.next
-        }
-        return p
-    },[]).sort((a, b) => a.val - b.val).reduceRight((p, n) => (n.next = p, p = n, p), null)
-};
+// const test = (a,b)=>(a--,b--,a+b)//返回的是最后一个逗号后面那个
+// console.log(test(3,4))
+// //y
+// var mergeKLists = function(lists) {
+//     return lists.reduce((p, n) => {
+//         while (n) {
+//             console.log(n)
+//             p.push(n), n = n.next
+//         }
+//         return p
+//     },[]).sort((a, b) => a.val - b.val).reduceRight((p, n) => (n.next = p, p = n, p), null)
+// };
+
+
+// for(let i = 0;i<3;i++)(console.log(i))//先执行后再加
+
+// const obj = { a: 'cjz' }
+// const obj2 = obj
+// const obj3 = { a: 'cjz' }
+
+// console.log(obj===obj2)
+// console.log(obj===obj3)
+
+
+console.log(true || 1)
+console.log(true && 1)
+
+console.log(1 + [3])
+console.log(+[3,2])

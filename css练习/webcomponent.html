@@ -1,0 +1,42 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-20 22:37:13
+ * @LastEditTime: 2021-03-21 01:00:16
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/css练习/webcomponent.html
+-->
+<!DOCTYPE html>
+<html>
+<body>
+  <todolist-item title="自定义标题" content="自定义正文"></todolist-item>
+  // 不需要定义 template
+</body>
+<script>
+  let TodoListTmp = document.createElement('template')
+  TodoListTmp.innerHTML = `
+    <style>
+      .item-body {
+        border: 1px solid black;
+        padding: 16px;
+      }
+    </style>
+    <div class="item-body">
+      <h3 class="title">默认标题</h3>
+      <p class="content">默认文本</p>
+    </div>
+  `
+  class TodoListItem extends HTMLElement {
+    constructor() {
+      super()
+      let shadow = this.attachShadow({ mode: 'closed' });
+      // console.log(shadow)
+      let content = TodoListTmp.content.cloneNode(true);
+      content.querySelector('.title').innerText = this.getAttribute('title');
+      content.querySelector('.content').innerText = this.getAttribute('content');
+      shadow.appendChild(content);
+    }
+  }
+  window.customElements.define('todolist-item', TodoListItem)
+</script>
+</html>

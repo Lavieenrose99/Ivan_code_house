@@ -1,0 +1,44 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-13 13:24:11
+ * @LastEditTime: 2021-03-13 18:47:53
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/css练习/每日一练/titlefont.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        h1{
+            font-size: 6.25rem;
+        }
+        #button1::after{
+            border: none;
+            content: '666';
+        }
+    </style>
+</head>
+<body>
+    <h1>La vie En Rose</h1>
+    <button id="button1">butt</button>
+    <button style="border: none;">button</button>
+    <script>
+        const hwele = document.querySelector('h1')
+        hwele.innerHTML = hwele.textContent.replace(/\S/g, "<span>$&</span>")
+    </script>
+</body>
+</html>

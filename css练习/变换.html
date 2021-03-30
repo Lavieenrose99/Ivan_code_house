@@ -1,0 +1,116 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-22 17:48:17
+ * @LastEditTime: 2021-02-22 22:05:16
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/css练习/变换.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body{
+            position: relative;
+        }
+        .elem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: #f66;
+    font-size: 20px;
+    color: #fff;
+  
+}  .transform-1 {
+        transform: translate(150px, 0) rotate(45deg) scale(2);
+    }
+    .transform-2 {
+        transform: rotate(45deg) translate(150px, 0);
+    }
+    li{
+        position: relative;
+        top: 200px
+    }
+    .par{
+        width: 100px;
+        transform: scale(-2,-2);
+    }
+    .ver{
+        width: 100px;
+        transform: scale(-1,-1);
+    }
+    .rever{
+        width: 100px;
+        transform: scale(2,-2);
+    }
+    .trans{
+        position: relative;
+        top: 300px;
+         left: 300px;
+        width: 100px;
+        height: 100px;
+        transition:  .5s 1s ease-in;
+        border: #f66 1px solid;
+    }
+    .trans:hover{
+        
+        transform: scale(2);
+    }
+    .ani-rainbow{
+        position: relative;
+        top: 400px;
+        border: #f66 1px solid;
+        left: 100px;
+        width: 100px;
+        height: 100px;
+    }  
+     @keyframes rain{
+        0% { background: #c00; }
+        50% { background: orange; }
+       100% { background: yellowgreen; }
+    }
+    .ani-rainbow:hover{
+        animation: 1s rain;
+    }
+    .ani-rainbow-gra{
+        position: relative;
+        top: 500px;
+        border: #f66 1px solid;
+        left: 100px;
+        width: 100px;
+        height: 100px; 
+        animation: 2s rain-gra 1 forwards;
+    }
+    @keyframes rain-gra{
+       from{
+           background-color: red;
+           margin-left: 100%;
+       }
+       to{
+           background-color: aqua;
+       }
+    }
+  
+    </style>
+</head>
+<body>
+    <div class="elem"></div>
+    <div class="elem transform-1">1</div>
+    <div class="elem transform-2">1</div>
+    <li>正常文本</li>
+    <li class="par">水平翻转</li>
+    <li class="ver">垂直翻转</li>
+    <li class="rever">倒顺</li>
+    <div class="trans"></div>
+    <div class="ani-rainbow"></div>
+    <div class="ani-rainbow-gra"></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-21 01:09:05
+ * @LastEditTime: 2021-03-21 12:18:50
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/css练习/首屏渲染/check.html
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>首屏</title>
+    <script>
+        // 不兼容 performance.timing 的浏览器
+        window.pageStartTime = Date.now()
+    </script>
+</head>
+<body>
+    <img src="https://lz5z.com/assets/img/google_atf.png" alt="img" onload="load()">
+    <img src="https://lz5z.com/assets/img/css3_gpu_speedup.png" alt="img" onload="load()">
+    <script>
+        function load () {
+            window.firstScreen = Date.now()
+        }
+        window.onload = function () {
+            // 首屏时间
+            console.log(window.firstScreen - performance.timing.navigationStart)
+        }
+    </script>
+</body>
+</html>

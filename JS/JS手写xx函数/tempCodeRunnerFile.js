@@ -1,1 +1,1 @@
-    console.log(onFulfilled(this.value))
+obj.Check()

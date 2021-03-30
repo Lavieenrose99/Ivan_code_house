@@ -1,0 +1,58 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-15 16:23:44
+ * @LastEditTime: 2021-03-15 16:52:16
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/css练习/每日一练/事件机制.html
+-->
+<!DOCTYPE html>
+<html lang="en" id='html'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="fat">
+    <button id="btn">触发</button>
+    </div>
+    <script>
+        var btn = document.getElementById("btn")
+        var fat = document.getElementById("fat")
+        var html = document.getElementById('html')
+        btn.addEventListener("click",function(e){
+            // e.stopPropagation()
+            console.log('冒泡')
+        }, false)
+        btn.addEventListener("click",function(){
+            console.log('捕获')
+        },true)
+        fat.addEventListener("click",function(e){
+            // e.stopPropagation()
+            console.log('捕获'+'111')
+        },true)
+        fat.addEventListener("click",function(e){
+            console.log('冒泡'+111)
+        })
+        window.addEventListener('click', function() {
+            console.log('window ')
+        })
+        window.addEventListener('click', function() {
+            console.log('window 捕获')
+        }, true)
+        document.addEventListener('click', function() {
+            console.log('DOCUMENT 冒泡')
+        })
+        document.addEventListener('click', function() {
+            console.log('DOCUMENT 捕获')
+        }, true)
+        html.addEventListener('click', function() {
+            console.log('html 冒泡')
+        })
+        html.addEventListener('click', function() {
+            console.log('html 捕获')
+        }, true)
+    </script>
+</body>
+</html>

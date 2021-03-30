@@ -1,0 +1,54 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-14 00:10:53
+ * @LastEditTime: 2021-03-14 00:54:57
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/css练习/每日一练/drag.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 2px red solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script> 
+        window.onload = function(){
+          var box = document.querySelector("#box")
+          var dragging = false
+          var position = []
+          box.addEventListener('mousedown',function(e){
+           dragging = true
+           position = [e.clientX, e.clientY] //起始位置计算偏移量
+       })
+          document.addEventListener("mousemove",function(e){
+              if(dragging === false) return
+              var x = e.clientX
+              var y = e.clientY
+              const deltaX = x - position[0] //偏移量
+            const deltaY = y - position[1]
+            const left = parseInt(box.style.left || 0)
+            const top = parseInt(box.style.top || 0)
+            box.style.left = left + deltaX + 'px'
+            box.style.top = top + deltaY + 'px'
+            position = [x, y]
+
+        })
+        document.addEventListener('mouseup', function(e){
+  dragging = false
+})
+    }
+    </script>
+</body>
+</html>

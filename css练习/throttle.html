@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-02 22:16:49
+ * @LastEditTime: 2021-03-09 22:24:42
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/css练习/throttle.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +25,7 @@
          }
          canRender = false
          setTimeout(()=>{
-           fn.apply(this,arguments)
+           fn() //节流其实就是一个定时器的
            canRender = true
            
          },ms)
@@ -26,10 +34,10 @@
     var input = document.querySelector("#throttle")
     var str = document.getElementById('show')
     var count = 0
-    input.onclick = throttle(()=>{
+    input.addEventListener('click',throttle(()=>{
        count++
        str.innerHTML = count
-    },500)
+    },500),false)
   </script>
 </body>
 </html>

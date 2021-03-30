@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-19 00:51:34
- * @LastEditTime: 2021-01-19 18:33:21
+ * @LastEditTime: 2021-03-13 22:44:37
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/JS/this.js
@@ -124,3 +124,19 @@ function fun1(x){
     return arr.join("")
 }
 console.log(fun1(data))
+
+const Objbind = {
+    name: 'cjz',
+    year: 22
+}
+const Objbind2 = {
+    name: 'gyw',
+}
+function container(){
+   const arrFunc = ()=>{
+    console.log(this.name,111) //箭头函数是没有this的它的this只是因为它处于词法作用域它会引用它上一级的一个this
+  }
+arrFunc()
+}
+container.call(Objbind)
+container.call(Objbind2)

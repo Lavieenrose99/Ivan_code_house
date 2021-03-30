@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-01-23 10:28:20
- * @LastEditTime: 2021-02-02 21:37:40
+ * @LastEditTime: 2021-03-15 11:02:17
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/css练习/debounce.html
@@ -15,29 +15,56 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <input id="input"  ></input>
+        <input id="input"  >防抖函数</input>
         <div id="text">0</div>
+        <input type="button" id = "button">节流函数</input>
+        <input type="button1" id = "button1">按钮</input>
+        <div id="save">0</div>
       </div>
       <script>
         // 思考防抖
-    const debounce = function (fn, delay = 1000) {
-         let time = null
-        return function (...args) {
-            // console.log([...arguments])
-            // console.log(args)
-        let that = this
-          time && clearTimeout(time)
-         time = setTimeout(function () {
-          fn.apply(that,args)
-        }, delay)
+        const debounce = (fn,time)=>{//主要思路是保存time，每每触发一次都是新的计算时间主要主要用的还都是闭包的思想
+          return function(...args){
+            setTimeout(()=>{
+              fn.apply({},args)
+            },time)
           }
-  }
-       const input  = document.getElementById('input')
-       const text = document.getElementById('text')
-       input.oninput = debounce((e)=>{
-                 text.innerHTML = e.target.value
-       },1000)
+        }
+        var input = document.getElementById("input")
+        var text = document.getElementById("text")
+        var button = document.getElementById("button")
+        var button1 = document.getElementById("button1")
+        var text1 = document.getElementById("save")
+        var num  = 1
+        
+        
+        input.addEventListener("input", debounce((e)=>{
+          console.log(111)
+           text.innerHTML = e.target.value
+        },1000))
+        const throttle = (fn,wtime)=>{
+          console.log(new Date)
+          let time = false
+          return function(){
+            if(!time) //time为null时执行
+              time = setTimeout(()=>{
+              fn()
+            time = null //每次进过time秒 改成null
+            },wtime)
+          }
+        }
+        button.addEventListener("click",throttle(function(){
+                text1.innerHTML = num 
+                num++
+        },1000)) //监听的是一个立刻执行函数和只会执行它return的部分函数体的部分其实只是它的变量提取器
+        button1.addEventListener("click",function(){
+          console.log('clikkk')
+          return {
+             name: 'cjz'
+          }
+        }())
+
+
 
 
     </script>

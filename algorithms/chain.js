@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-23 01:55:32
- * @LastEditTime: 2021-02-13 22:28:33
+ * @LastEditTime: 2021-03-21 17:05:48
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/algorithms/chain.js
@@ -158,3 +158,60 @@ var mergeKLists = function(lists){
      return ans
  }
  
+
+ //判断回文链表
+ var isPalindrome = function(head) {  
+    let arr = []
+    let mark = head
+    while(mark){
+        arr.push(mark.val)
+        mark = mark.next
+    }
+    for(let a = 0,b = arr.length - 1;a < b;a++,b--){
+        if(arr[a]!==arr[b]){
+            return false
+        }
+    }
+    return true
+
+};
+
+var mergeTwoLists = function(l1, l2) {
+    if(l1==null) return l2
+    if(l2==null) return l1
+    if(l1.val<l2.val){
+        l1.next = mergeTwoLists(l1.next,l2)
+        return l1
+    }else{
+        l2.next = mergeTwoLists(l1,l2.next)
+        return l2
+    }
+};  
+
+//快慢指针
+var hasCycle = function(head) {
+    if(!head || !head.next){
+        return false
+    }
+    let fast = new ListNode()
+    let slow = new ListNode()
+    fast = head.next
+    slow = head
+    while(fast != null && fast.next != null){   
+        if(fast === slow){
+            return true
+        }
+        fast = fast.next.next
+        slow = slow.next
+    }
+        
+     
+    return false
+};
+
+
+const Void = {
+
+}
+
+console.log(Void.next)

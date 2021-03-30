@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-01-18 11:04:42
- * @LastEditTime: 2021-01-18 15:37:31
+ * @LastEditTime: 2021-03-17 16:22:58
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/css练习/BFC.html
@@ -14,25 +14,51 @@
     <title>Document</title>
     <style>
         
-       #block-1{
+        #block-1{
            /* float: left; */
+           /* overflow: hidden; */
            margin-bottom: 10px;
            height: 100px;
            width: 300px;
            background-color: red;
        }
        #block-2{
-           float: left;
+           /* float: left; */
+           /* overflow: hidden; */
+           display: inline-block;
            margin-top: 20px;
            height: 100px;
            width: 400px;
            background-color: black;
        }
+       #container{
+           float: left;
+       }
+       #block-3{
+           position: absolute;
+           left: 0;
+           top: 0;
+           margin-top: 20px;
+           height: 100px;
+           width: 400px;
+           background-color: green;
+       } 
+       /* #block-4{
+           display: inline-block;
+           margin:auto;
+           height: 100px;
+           width: 400px;
+           background-color: purple; 
+           vertical-align: middle;
+       } */
     </style>
 </head>
 <body>
+    <div id="container">
     <div id = 'block-1'></div>
-    <div id = 'block-2'></div>
-    
+    <div id = 'block-2'></div></div>
+    <!-- <div id = 'block-3'></div> -->
+    <!-- <div style="text-align: center ;border: 1px solid; height: 100vh; ">
+    <div id = 'block-4'></div></div> -->
 </body>
 </html>
