@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-03-12 11:02:06
- * @LastEditTime: 2021-03-12 11:14:34
+ * @LastEditTime: 2021-04-09 08:32:13
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/编译原理/switch.c
@@ -9,8 +9,16 @@
 
 #include <stdio.h>
 
+struct Select
+{
+    char name[20];
+    int votes;
+} ;
+
+
 int main(){
     int arr[8];
+    Select arrMan[4];
     int which,save,max,index;
     while(1){
          printf("请输入你要选择的候选人编号");

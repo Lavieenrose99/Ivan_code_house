@@ -1,0 +1,5 @@
+table ,th ,td ,tr{
+    border: 1px dashed ;
+    width:200px; height:30px;
+    /* border-collapse: separate; */
+}

@@ -1,0 +1,13 @@
+#div1{
+	height: 500px;
+	width: 500px;
+	background-color: pink;
+}
+#it{
+	font-style: italic;
+	font-size: 24px;
+	font-weight: bold;
+}
+.inline_div{
+	display: inline-block;
+}

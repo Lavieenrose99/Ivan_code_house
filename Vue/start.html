@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-03-26 10:35:51
- * @LastEditTime: 2021-03-26 10:41:02
+ * @LastEditTime: 2021-03-30 23:57:26
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/Vue/start.html
@@ -10,22 +10,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <title>Document</title>
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
-    <div id="app">
-        {{ message }}
-           </div>
-    <script>
-   const vm = new Vue({
-     el: '#app',
-     data: {
-     message: 'Hello Vue!'
-   }
-})
-vm = null
-    </script>
+ <div id="v">{{ value }}</div>
+ <div id="v1">{{ name }}
+  <ul>
+      <li v-for="value in arr" :key="value.name">
+          {{ value.name }}
+      </li>
+  </ul>
+ </div>
 </body>
+<script>
+    const v1 = new Vue({
+        el: '#v',
+        data: {
+            value : 'cjz'
+        },
+    });
+   const v2 = new Vue({
+      el: '#v1',
+       data: {
+          name: 'ljh',
+          arr: [
+              {name : 'ljz'},{name: 'cjz'}
+          ]
+    },
+    created(){
+            fetch('http://rap2.taobao.org/repository/editor?id=280542').then(res=>{
+                console.log(res)
+            })
+        }
+})
+</script>
+
 </html>

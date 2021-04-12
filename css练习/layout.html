@@ -1,0 +1,50 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-04-09 18:07:52
+ * @LastEditTime: 2021-04-09 18:13:26
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/css练习/layout.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #p1{
+            position: relative;
+            border: 1px red solid;
+            text-align: center; 
+            width: 200px;
+            height: 200px;
+        }
+        #p2{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border: 1px red solid;
+            width: 100px;
+            height: 100px;
+        }
+        #p3{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border: 1px red solid;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="p1">
+        <div id="p2">
+            <div id="p3"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+div{position: absolute;
+    width:1600px;height:900px;}
+#container{
+    background-color: grey;
+    color:white;
+    top: 25px;
+    left: 50px
+}
+#d1{
+    height: 100px;
+    width: 90%;
+    margin: 20px;
+}
+#inline_div{  background-color: greenyellow;
+}
+#container{
+    width: 800px;
+    height:800px;
+    border: 2px solid black
+}
+#inline_div{
+    display: inline-block;
+}
+#d2{
+    background-color:red;
+    height: 200px;
+    width:800px;
+
+}
+.it{font-style: initial;font-size: 24px;font-weight: bold;}
+#text{
+    position: absolute;
+    color: red;
+    top: 900px;
+}
