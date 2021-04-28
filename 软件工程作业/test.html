@@ -1,33 +1,36 @@
 <!--
  * @Author: your name
  * @Date: 2021-03-30 17:52:32
- * @LastEditTime: 2021-03-31 15:31:45
+ * @LastEditTime: 2021-04-15 19:55:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /ivan个人练习代码/软件工程作业/test.html
 -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>新闻</title>
-    <style type="text/css">
+    <title>Title</title>
+    <style>
+      
+    
     </style>
-    <link type="text/css" rel="stylesheet" href="test.css">
 </head>
 <body>
-    <div id="container">
-        <div id="d1" class="inline_div">div1</div>
-        <div id="d2" class="inline_div">
+    <form>
 
-        </div>
-      </div> 
-      <ul type="disc" id="text">
-        <li>2017央视综艺节目发力，彰显公益大爱</li>
-        <li>继北京、上海后，2017年腾讯视频推介会昨又在广州隆重举行</li>
-        <li>"跨界融合 开放共赢“移动互联网营销峰会</li>
-        <li>首届”<span class="it">联建杯</span>“户外LED显示屏媒体大赛评审圆满落幕</li>
-    </ul>
-    </div>  
-   
+            用户名：<input name="name" type="text" ><br>
+            密码：&nbsp;&nbsp;&nbsp;<input name="psw" type="password" maxlength="20"><br>
+            性别：&nbsp;&nbsp;&nbsp;<select name="sex" >
+            <option selected>男</option>
+            <option>女</option>
+            </select><br>
+            爱好：     &nbsp;&nbsp;足球: <input type="checkbox" name="c1" value="足球" checked="checked"/>
+            兵乓球: <input type="checkbox" name="c2" value="唱歌" checked="checked"/>
+            篮球: <input type="checkbox" name="c3" value="游戏" /><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input  type="submit" name="submit" value="提交"/>
+        <input id="input1" type="reset" name="reset" value="重置"/>
+    </form>
 </body>
 </html>

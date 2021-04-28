@@ -1,0 +1,182 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-04-21 16:49:17
+ * @LastEditTime: 2021-04-22 00:18:58
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/软件工程作业/oppo.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>oppo</title>
+    <link rel="stylesheet" href="oppo.css">
+    <style>
+      *{
+    margin: 0;
+    padding: 0;
+}
+ol,ul{
+    list-style-type:none;
+}
+a{
+    color: #666;
+    text-decoration:none;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+#top,#header,#nav,#banner,#star,#accessory,#world,#sever,#after_sale,#footer{
+    height: 100px;
+    width:100%;
+
+}
+.container{
+    /*width: 1280px;*/
+
+    /*margin:0px auto;*/
+}
+/*页面顶部的样式*/
+#top{
+    height: 5px;
+    background-color: #0f745e;
+}
+/*设置页面头部*/
+#header{
+    background-color: #2d2d2d;
+}
+#header::after{
+    clear: both;
+}
+
+#header .xlwb{
+    width: 21px;
+    height: 17px;
+    background: url("img/xlwb.png") no-repeat ;
+}
+#header .txwb{
+    width: 17px;
+    height: 20px;
+    background: url("img/txwb.png") no-repeat ;
+}
+#header .tel{
+    color: #17925F;
+}
+#header .header_left div{
+    float: left;
+    margin: 5px 10px 0px;
+}
+#header ul li{
+    float:left;
+    line-height: 30px;
+}
+#header li a{
+    color: #B2B2B2;
+    font-size: 12px;
+    border-right: 1px solid #B2B2B2;
+    padding:0px 15px;
+}
+#header li a:hover{
+    color:#00925F;
+}
+#header .shop_car a{
+    border: none;
+    padding-left: 8px;
+}
+#header .shop_car span{
+    width: 19px;
+    height: 16px;
+    display:inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    background: url("img/shopcar.png") no-repeat;
+}
+/*设置导航栏的样式*/
+#nav{
+    height: 90px;
+    background-color:#EEEEEE;
+}
+#nav ul li{
+    float:right;
+    margin: 0px 10px;
+    line-height: 90px;
+}
+#nav li a{
+    color:#666666;
+    font-weight: bold;
+}
+#nav li a:hover{
+    color: #00925F;
+}
+#nav .logo img{
+    width: 300px;
+    height: 80px;
+
+}
+    </style>
+</head>
+<body>
+     <div id="top">
+         <div class="container"></div>
+     </div>
+     <div id="header">
+         <div class="container">
+             <div class="header_left left">
+                 <div class="xlwb"></div>
+                 <div class="txwb"></div>
+                 <div class="tel">4001-666-888</div>
+             </div>
+             <ul class="header_right right">
+                 <li><a href=" ">登录</a ></li>
+                 <li><a href="#">注册</a ></li> 
+                 <li><a href="#">积分兑换</a ></li>
+                 <li><a href="#">帮助中心</a ></li>
+                 <li class="shop_car"><span></span><a href="#">购物车</a ></li>
+             </ul>
+         </div>
+     </div>
+     <div id="nav">
+         <div class="container">
+             <div class="logo left">
+                 <img src="img/logo.png">
+             </div>
+             <ul class="right">
+                 <li><a href="#">首页</a ></li>
+                 <li><a href="#">手机</a ></li>
+                 <li><a href="#">配件</a ></li>
+                 <li><a href="#">服务</a ></li>
+                 <li><a href="#">体验店</a ></li>
+                 <li><a href="#">软件商店</a ></li>
+                 <li><a href="#">ColorOS</a ></li>
+             </ul>
+         </div>
+     </div>
+     <div id="banner">
+         <div class="container"></div>
+     </div>
+     <div id="star">
+         <div class="container">
+             <div clas="star_top">
+                 <img src="">
+             </div>
+         </div>
+     </div>
+     <div id="accessory">
+         <div class="container"></div>
+     </div>
+     <div id="world">
+         <div class="container"></div>
+     </div>
+     <div id="serve">
+         <div class="container"></div>
+     </div>
+     <div id="after_sale">
+         <div class="container"></div>
+     </div>
+
+</body>
+</html>

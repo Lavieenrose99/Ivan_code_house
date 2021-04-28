@@ -2,40 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA_Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #box1{
-            width:600px;
-            height:600px;
-            background-color: :rgb(231,231,240);
-            margin:0px auto;
-        }
-        #box2{
-            width: 500px;
-            height:500px;
-            background-color: rgb(109,109,235);
-            position: relative;
-        }
-        #box3{
-            width:400px;
-            height:400px;
-            background-color: :rgb(32,32,202);
-            position: absolute;
-        }
-        #box4{
-            width:200px;
-            height:200px;
-            background-color: rgb(3,3,48);
-            position:   absolute ;
-            left: 100px;
-            top:100px;
-
+        table{
+            border-collapse: collapse;
         }
     </style>
 </head>
 <body>
-
+    <table border="1" width="700" height="700"  bordercolor="#777777" bgcolor="#5f9ea0">
+        <tr>
+           
+        </tr>
+    <tr>
+        <td rowspan="2" id="t2">
+            <table>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+        </table>
+        </td>
+    </tr>    <!-- rowspan合并该列的两个单元格，所以它的下一列将删除一个单元格-->
+        <tr>
+            <td colspan="2"></td>
+        </tr>   <!--colspan合并该行的2个单元格，所以该行删除一个标签-->
+        <tr>
+         
+        </tr>
+    </table>
 </body>
 </html>

@@ -1,0 +1,34 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-04-16 00:48:43
+ * @LastEditTime: 2021-04-16 13:15:35
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/培训/lesson1/simpleEvent.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <button id="btn1">点我</button>
+    <input id="ip1" placeholder="输入"/>
+    <section>输出：<div id="box1"> </div></section>
+    <script>
+        var btn1 = document.getElementById("btn1")
+        var input1 = document.getElementById("ip1")
+        var box1 = document.getElementById("box1")
+        btn1.onclick = function(){
+            alert("带你去快乐JS猩球")
+        }
+        input1.oninput = function(e){
+            box1.innerHTML = e.target.value
+        }
+    </script>
+</body>
+</html>

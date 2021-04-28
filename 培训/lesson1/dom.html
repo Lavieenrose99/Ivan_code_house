@@ -1,0 +1,40 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-04-15 19:16:58
+ * @LastEditTime: 2021-04-23 16:52:43
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /ivan个人练习代码/培训/lesson1/dom.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="dom.js"></script>
+    <button id="btn1">点我</button>
+    <button id="btn2">点你</button>
+    <input id="ipt1" />
+    <script>
+        let btn1 = document.getElementById("btn1")
+        let btn2 = document.getElementById("btn2")
+        let ipt1 = document.getElementById("ipt1")
+
+        btn1.onclick = function() {
+            alert("点你xxx？")
+        }
+
+        btn2.addEventListener("click", function() {
+            alert("点你咋地")
+        })
+
+        ipt1.oninput = function(e) {
+            console.log(e.target.value)
+        }
+
+    </script>
+</body>
+</html>
